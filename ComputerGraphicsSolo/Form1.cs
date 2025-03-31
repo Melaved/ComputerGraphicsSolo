@@ -73,7 +73,7 @@ namespace ComputerGraphicsSolo
         }
         private void DrawThickPixel(int x, int y, Color color, int thickness)
         {
-            int halfThickness = thickness / 2;
+            var halfThickness = thickness / 2;
 
             for (int i = -halfThickness; i <= halfThickness; i++)
             {
@@ -241,7 +241,7 @@ namespace ComputerGraphicsSolo
             using (var thicknessDialog = new Form())
             {
                 thicknessDialog.Text = "Выберите толщину линии";
-                thicknessDialog.Size = new Size(200, 150);
+                thicknessDialog.Size = new Size(200, 200);
 
                 var trackBar = new TrackBar();
                 trackBar.Minimum = 1;
@@ -252,7 +252,7 @@ namespace ComputerGraphicsSolo
 
                 var okButton = new Button();
                 okButton.Text = "OK";
-                okButton.Location = new Point(50, 70);
+                okButton.Location = new Point(50, 90);
                 okButton.Click += (s, ev) =>
                 {
                     currentThickness = trackBar.Value;
